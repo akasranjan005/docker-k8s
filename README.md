@@ -21,6 +21,10 @@ docker-compose --version
 
 ## 3. Installing Kubernetes
 
+```
+ToDo
+```
+
 * ToDo:
-  * Docker Tutorial
-  * K8s Tutorial
+  * Add Sample Dockerfile and docker-compose file and explanation
+  * Add kubernetes sample file and explanation
