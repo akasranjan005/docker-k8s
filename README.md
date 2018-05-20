@@ -21,6 +21,21 @@ docker-compose --version
 
 ## 3. Installing Kubernetes
 
+* Install Kubectl
+
+```
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+kubectl version
+```
+
+* Install Minikube
+
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+minikube start
+```
+
 ```
 ToDo
 ```
