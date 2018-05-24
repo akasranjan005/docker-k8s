@@ -8,6 +8,12 @@
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
+------------------OR---------------------
+
+```
+sudo apt install docker.io
+```
+
 
 ## 2. Docker-Compose Installation - [Documentation](https://docs.docker.com/compose/install/#prerequisites)
 
