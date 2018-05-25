@@ -25,7 +25,7 @@ docker-compose --version
 
 * `get-docker.sh` file is retrieved from [docker](https://github.com/docker/docker-install) repository. It helps in installing docker-ce on a non-production enviroment.
 
-## 3. Installing Kubernetes
+## 3. Installing Kubernetes - [Documentation](https://kubernetes.io/docs/setup/)
 
 * Install Kubectl
 
