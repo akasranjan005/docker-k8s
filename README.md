@@ -42,6 +42,12 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minik
 minikube start
 ```
 
+* Install Kubernetes Dashboard
+
+```
+ToDo
+```
+
 ```
 ToDo
 ```
