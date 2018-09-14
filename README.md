@@ -27,23 +27,28 @@ docker-compose --version
 
 ## 3. Installing Kubernetes - [Documentation](https://kubernetes.io/docs/setup/)
 
-* Install VirtualBox
-
-
-
-* Install Kubectl
+### 3.1 Ubuntu
 
 ```
-curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && sudo mv kubectl /usr/local/bin/
-chmod +x ./kubectl
-kubectl version
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 ```
 
-* Install Minikube
-
+create a file /etc/apt/sources.list.d/kubernetes.list
 ```
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
-minikube start
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+```
+
+Update the packages
+```
+sudo apt update
+```
+
+Install Kubernetes
+```
+sudo apt install -y kubelet kubeadm kubectl
+```
+
+
 ```
 
 * Install Kubernetes Dashboard
