@@ -48,6 +48,16 @@ Install Kubernetes
 sudo apt install -y kubelet kubeadm kubectl
 ```
 
+* Additional Configs
+```
+ToDO
+```
+
+### 3.2 CentOs
+
+```
+ToDo
+```
 
 ```
 
