@@ -1,11 +1,11 @@
 # Basic commands of Kubernetes
 
-* kubectl get pods
+* `kubectl get pods`
 ```
 Gives the current state of all pods
 ```
 
-* kubectl get nodes
+* `kubectl get nodes`
 ```
 Gives the current status of all nodes.
 ```
