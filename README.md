@@ -8,6 +8,7 @@
 
 ## 1. Docker Installation - [Documentation](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
 
+### 1.1 Ubuntu
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
@@ -16,6 +17,12 @@ sh get-docker.sh
 
 ```
 sudo apt install docker.io
+```
+
+### 1.2 CentOs
+
+```
+ToDo
 ```
 
 
