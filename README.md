@@ -1,3 +1,5 @@
+[![HitCount](http://hits.dwyl.io/akasranjan005/docker-k8s.svg)](http://hits.dwyl.io/akasranjan005/docker-k8s)
+
 # Docker & K8s
 
 1  [Docker Installation](#1-docker-installation---documentation)  
