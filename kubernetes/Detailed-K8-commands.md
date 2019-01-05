@@ -1,22 +1,29 @@
-
-
-##############################################################################
 # CLIENT CONFIGURATION
-##############################################################################
 
 
-# Setup autocomplete in bash; bash-completion package should be installed first
-source <(kubectl completion bash)
+* Setup autocomplete in bash; bash-completion package should be installed first
 
-# View Kubernetes config
+```
+source <(kubectl completion bash) 
+```
+
+* View Kubernetes config
+
+```
 kubectl config view
+```
 
-# View specific config items by json path
+* View specific config items by json path
+
+```
 kubectl config view -o jsonpath='{.users[?(@.name == "k8s")].user.password}'
+```
 
-# Set credentials for foo.kuberntes.com
+* Set credentials for foo.kuberntes.com
+
+```
 kubectl config set-credentials kubeuser/foo.kubernetes.com --username=kubeuser --password=kubepassword
-
+```
 
 ##############################################################################
 # VIEWING, FINDING RESOURCES
