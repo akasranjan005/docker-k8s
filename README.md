@@ -1,9 +1,16 @@
+[![HitCount](http://hits.dwyl.io/akasranjan005/docker-k8s.svg)](http://hits.dwyl.io/akasranjan005/docker-k8s)
+
 # Docker & K8s
 
-`All the installation instructions are for Ubuntu. For other OS, visit full documentation`
+1  [Docker Installation](#1-docker-installation---documentation)  
+2  [Docker-Compose Installation](#2-docker-compose-installation---documentation)  
+3  [Installing Kubernetes](#3-installing-kubernetes---documentation)  
+    3.1  [Ubuntu](#31-ubuntu)  
+    3.2  [CentOs](#32-centos)  
 
 ## 1. Docker Installation - [Documentation](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
 
+### 1.1 Ubuntu
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
@@ -14,11 +21,19 @@ sh get-docker.sh
 sudo apt install docker.io
 ```
 
+### 1.2 CentOs
+
+```
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce
+```
+
 
 ## 2. Docker-Compose Installation - [Documentation](https://docs.docker.com/compose/install/#prerequisites)
 
 ```
-sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
@@ -27,19 +42,38 @@ docker-compose --version
 
 ## 3. Installing Kubernetes - [Documentation](https://kubernetes.io/docs/setup/)
 
-* Install Kubectl
+### 3.1 Ubuntu
 
 ```
-curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-kubectl version
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 ```
 
-* Install Minikube
+create a file /etc/apt/sources.list.d/kubernetes.list
+```
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+```
+
+Update the packages
+```
+sudo apt update
+```
+
+Install Kubernetes
+```
+sudo apt install -y kubelet kubeadm kubectl
+```
+
+* Additional Configs
+```
+ToDO
+```
+
+### 3.2 CentOs
 
 ```
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
-minikube start
+ToDo
+```
+
 ```
 
 * Install Kubernetes Dashboard
