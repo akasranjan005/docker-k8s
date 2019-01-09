@@ -1,5 +1,4 @@
 # K8s Dashboard
-
 * Deploying the Dashboard UI
 
 ```
