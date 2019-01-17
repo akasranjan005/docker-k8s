@@ -15,11 +15,6 @@
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
-------------------OR---------------------
-
-```
-sudo apt install docker.io
-```
 
 ### 1.2 CentOs
 
