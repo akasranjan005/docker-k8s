@@ -77,10 +77,6 @@ ToDo
 ToDo
 ```
 
-```
-ToDo
-```
-
 * ToDo:
   * Add Sample Dockerfile and docker-compose file and explanation
   * Add kubernetes sample file and explanation
