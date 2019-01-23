@@ -16,6 +16,8 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
 
+* `get-docker.sh` file is retrieved from [docker](https://github.com/docker/docker-install) repository. It helps in installing docker-ce on a non-production enviroment.
+
 ### 1.2 CentOs
 
 ```
@@ -32,8 +34,6 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.23.1/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
-
-* `get-docker.sh` file is retrieved from [docker](https://github.com/docker/docker-install) repository. It helps in installing docker-ce on a non-production enviroment.
 
 ## 3. Installing Kubernetes - [Documentation](https://kubernetes.io/docs/setup/)
 
