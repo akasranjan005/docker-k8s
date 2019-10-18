@@ -35,6 +35,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
+
+## Blog
+You can ready my blog on docker [here](https://blogs.akashranjan.in)
+
 ## 3. Installing Kubernetes - [Documentation](https://kubernetes.io/docs/setup/)
 
 ### 3.1 Ubuntu
@@ -79,4 +83,4 @@ ToDo
 
 * ToDo:
   * Add Sample Dockerfile and docker-compose file and explanation
-  * Add kubernetes sample file and explanation
+  * Add kubernetes sample file and explanation 
