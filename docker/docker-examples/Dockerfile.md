@@ -24,4 +24,4 @@ This command will write the cusotm text in our default nginx html, so we will kn
 
 * ```EXPOSE 80```
 
-This will expose port 80 of your container with you base os.
+This command is only for documentation purpose, it doesn't open any port. In this case it shows that port 80 needs to be opened.
