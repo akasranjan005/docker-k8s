@@ -12,8 +12,9 @@ Using Compose is basically a three-step process:
 
 3. Run docker-compose up and Compose starts and runs your entire app.
 
-A docker-compose.yml looks like this:
--------------------------------------------------------------------
+## Example docker-compose.yml
+
+```
 version: '3'
 services:
   web:
@@ -29,20 +30,65 @@ services:
     image: redis
 volumes:
   logvolume01: {}
+```
 
+## DOCKER COMPOSE
 
-##############################################################################
-# DOCKER COMPOSE
-##############################################################################
+``` 
+docker-compose up                               
+```
 
+* Create and start containers
 
-docker-compose up                               # Create and start containers
-docker-compose up -d                            # Create and start containers in detached mode
-docker-compose down                             # Stop and remove containers, networks, images, and volumes
-docker-compose logs                             # View output from containers
-docker-compose restart                          # Restart all service
-docker-compose pull                             # Pull all image service 
-docker-compose build                            # Build all image service
-docker-compose config                           # Validate and view the Compose file
-docker-compose scale <service_name>=<replica>   # Scale special service(s)
-docker-compose top                              # Display the running processes
+```
+docker-compose up -d                            
+```
+
+* Create and start containers in detached mode
+
+```
+docker-compose down                             
+```
+
+* Stop and remove containers, networks, images, and volumes
+
+```
+docker-compose logs                             
+```
+
+* View output from containers
+
+```
+docker-compose restart
+```
+
+* Restart all service
+
+```
+docker-compose pull                             
+```
+
+* Pull all image service 
+
+```
+docker-compose build                            
+```
+
+* Build all image service
+
+```
+docker-compose config                           
+```
+
+* Validate and view the Compose file
+
+```
+docker-compose scale <service_name>=<replica>   
+```
+
+* Scale special service(s)
+
+```
+docker-compose top                              
+```  
+* Display the running processes
