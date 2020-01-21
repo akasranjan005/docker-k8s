@@ -25,31 +25,50 @@ kubectl config view -o jsonpath='{.users[?(@.name == "k8s")].user.password}'
 kubectl config set-credentials kubeuser/foo.kubernetes.com --username=kubeuser --password=kubepassword
 ```
 
-##############################################################################
 # VIEWING, FINDING RESOURCES
-##############################################################################
 
+* List all services in the namespace
 
-# List all services in the namespace
+```
 kubectl get services
+```
 
-# List all pods in all namespaces in wide format
+* List all pods in all namespaces in wide format
+
+```
 kubectl get pods -o wide --all-namespaces
+```
 
-# List all pods in json (or yaml) format
+* List all pods in json (or yaml) format
+
+```
 kubectl get pods -o json
+```
 
-# Describe resource details (node, pod, svc)
+* Describe resource details (node, pod, svc)
+
+```
 kubectl describe nodes my-node
+```
 
-# List services sorted by name
+
+* List services sorted by name
+
+```
 kubectl get services --sort-by=.metadata.name
+```
 
-# List pods sorted by restart count
+* List pods sorted by restart count
+
+```
 kubectl get pods --sort-by='.status.containerStatuses[0].restartCount'
+```
 
-# Rolling update pods for frontend-v1
+* Rolling update pods for frontend-v1
+
+```
 kubectl rolling-update frontend-v1 -f frontend-v2.json
+```
 
 # Scale a replicaset named 'foo' to 3
 kubectl scale --replicas=3 rs/foo
