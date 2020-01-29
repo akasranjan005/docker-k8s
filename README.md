@@ -62,6 +62,32 @@ Install Kubernetes
 sudo apt install -y kubelet kubeadm kubectl
 ```
 
+Add the iptables rule to sysctl.conf:
+
+```
+echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
+```
+
+Enable iptables:
+
+```
+sudo sysctl -p
+```
+
+Initialize the cluster (run only on the master):
+
+```
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+```
+
+Set up local kubeconfig:
+
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
 * Additional Configs
 ```
 ToDO
