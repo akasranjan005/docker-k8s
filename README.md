@@ -88,6 +88,12 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
+Join nodes with master
+
+```
+
+```
+
 * Additional Configs
 ```
 ToDO
