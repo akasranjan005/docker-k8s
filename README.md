@@ -12,11 +12,15 @@
 
 ### 1.1 Ubuntu
 ```
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+stable"
+sudo apt-get update
+sudo apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu
+sudo apt-mark hold docker-ce
 ```
-
-* `get-docker.sh` file is retrieved from [docker](https://github.com/docker/docker-install) repository. It helps in installing docker-ce on a non-production enviroment.
 
 ### 1.2 CentOs
 
@@ -44,12 +48,14 @@ You can ready my blog on docker [here](https://blogs.akashranjan.in)
 ### 3.1 Ubuntu
 
 ```
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 ```
 
 create a file /etc/apt/sources.list.d/kubernetes.list
 ```
-deb http://apt.kubernetes.io/ kubernetes-xenial main
+cat << EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
 ```
 
 Update the packages
@@ -59,7 +65,8 @@ sudo apt update
 
 Install Kubernetes
 ```
-sudo apt install -y kubelet kubeadm kubectl
+sudo apt-get install -y kubelet=1.18.0-00 kubeadm=1.18.0-00 kubectl=1.18.0-00
+sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
 Add the iptables rule to sysctl.conf:
@@ -80,7 +87,7 @@ Initialize the cluster (run only on the master):
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
 
-Set up local kubeconfig:
+Set up local kubeconfig (run only on the master):
 
 ```
 mkdir -p $HOME/.kube
@@ -88,10 +95,17 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-Join nodes with master
+Join nodes with master. Run below command on nodes
 
 ```
+kubeadm join <MASTER_NODE_IP>:6443 --token <TOKEN> \
+    --discovery-token-ca-cert-hash <HASH>
+```
 
+
+Install Flannel CNI (run only on the master)
+```
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 
 * Additional Configs
